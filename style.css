@@ -1,0 +1,73 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.notifications {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    position: fixed;
+    top: 10vh;
+    left: 100vw;
+    border: 1px solid green;
+    user-select: none;
+    pointer-events: none;
+}
+
+.notification {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 50px;
+    width: 240px;
+    white-space: wrap;
+    word-break: break-all;
+    padding: .25em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #eaeaea;
+    border-radius: .25em;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+}
+
+.notification::before,
+.notification::after {
+    text-shadow: 2px 2px 2px #0007;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+.notification::before {
+    padding: 1em;
+    width: 50px;
+    font: var(--fa-font-solid);
+}
+.notification.notification-success::before {
+    color: green;
+    content: "\f00c";
+}
+.notification.notification-warn::before {
+    color: orange;
+    content: "\21";
+}
+.notification.notification-error::before {
+    color: red;
+    content: "\f071";
+}
+.notification::after {
+    pointer-events: auto;
+    cursor: pointer;
+    padding: .5em;
+    width: 40px;
+    font: var(--fa-font-solid);
+    content: "\f00d";
+}
