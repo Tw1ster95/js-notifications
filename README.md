@@ -11,6 +11,8 @@ const notifications = new Notifications({
     transitionSpeed: 1000,
     hideDelay: 5000
 });
+
+document.getElementById('button').addEventListener('click', (e) => notifications.addNotification('success', 'You clicked the button.'));
 ```
 ## Screenshots
 
